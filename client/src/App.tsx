@@ -5,6 +5,8 @@ import { Container } from '@chakra-ui/react'
 import DefaultLayout from './components/layouts/Default'
 import LineChart from './components/LineChart'
 import theme from './theme'
+import { UserInputs } from './components/UserInputs'
+import { Header } from './components/Header'
 
 const defaultTheme = extendTheme(theme)
 
@@ -22,6 +24,8 @@ function App() {
             get you started!*/}
             <DefaultLayout>
                 <Container pt={6}>
+                    <Header />
+                    <UserInputs />
                     <LineChart
                         title="Savings Over time"
                         xAxisData={tempData.xAxis}
