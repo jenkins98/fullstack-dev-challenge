@@ -5,8 +5,12 @@ export const InitialSavings = () => {
     const { setInitialSavings } = useSavingsStore()
 
     const handleInitialSavingsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.value === '') {
+            setInitialSavings(0)
+            return
+        }
         const value = e.target.valueAsNumber
-        if (!isNaN(value)) setInitialSavings(e.target.valueAsNumber)
+        if (!isNaN(value)) setInitialSavings(value)
     }
 
     return (

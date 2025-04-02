@@ -5,6 +5,10 @@ export const Deposit = () => {
     const { setMonthlyDeposit } = useSavingsStore()
 
     const handleMonthlyDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.value === '') {
+            setMonthlyDeposit(0)
+            return
+        }
         const value = e.target.valueAsNumber
         if (!isNaN(value)) setMonthlyDeposit(value)
     }
