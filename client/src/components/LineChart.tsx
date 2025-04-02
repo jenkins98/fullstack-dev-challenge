@@ -11,6 +11,7 @@ import {
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import theme from '../theme'
+import { Box } from '@chakra-ui/react'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
@@ -36,6 +37,7 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
         },
         scales: {
             y: {
+                beginAtZero: true,
                 title: {
                     display: !!yLabel,
                     text: yLabel,
